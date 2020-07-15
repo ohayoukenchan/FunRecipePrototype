@@ -7,4 +7,14 @@ target 'FunRecipePrototype' do
 
   # Pods for FunRecipePrototype
 
+  # Reactive
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxOptional'
+
+  # API
+  pod 'Alamofire'
+  pod 'SwiftyBeaver'
+  pod 'FunRecipeAPI', :git => 'https://github.com/ohayoukenchan/FunRecipeAPI.git'
+
 end

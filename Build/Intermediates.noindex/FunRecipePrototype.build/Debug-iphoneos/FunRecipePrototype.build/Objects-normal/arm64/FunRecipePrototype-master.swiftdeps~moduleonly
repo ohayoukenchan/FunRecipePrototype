@@ -1,7 +1,0 @@
-version: "Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)"
-options: "27065b91f1451a5ea09516fc02868e83"
-build_time: [1594786393, 778917000]
-inputs:
-  "/Users/ohayoukenchan/dev/FunRecipePrototype/FunRecipePrototype/ViewController.swift": [1594786391, 160622822]
-  "/Users/ohayoukenchan/dev/FunRecipePrototype/FunRecipePrototype/AppDelegate.swift": [1594786391, 154600768]
-  "/Users/ohayoukenchan/dev/FunRecipePrototype/FunRecipePrototype/SceneDelegate.swift": [1594786391, 158134237]
