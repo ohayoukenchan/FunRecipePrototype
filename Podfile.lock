@@ -1,0 +1,54 @@
+PODS:
+  - Alamofire (4.9.1)
+  - FunRecipeAPI (0.0.1):
+    - Alamofire (~> 4.9.1)
+    - RxSwift (~> 5.0.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxOptional (4.1.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
+  - SwiftyBeaver (1.9.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - FunRecipeAPI (from `https://github.com/ohayoukenchan/FunRecipeAPI.git`)
+  - RxCocoa
+  - RxOptional
+  - RxSwift
+  - SwiftyBeaver
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - RxCocoa
+    - RxOptional
+    - RxRelay
+    - RxSwift
+    - SwiftyBeaver
+
+EXTERNAL SOURCES:
+  FunRecipeAPI:
+    :git: https://github.com/ohayoukenchan/FunRecipeAPI.git
+
+CHECKOUT OPTIONS:
+  FunRecipeAPI:
+    :commit: f98f9ad6036fc806c33dc279b6a9c38bbbe42b82
+    :git: https://github.com/ohayoukenchan/FunRecipeAPI.git
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  FunRecipeAPI: 52707670c11d1d97005c3500bc65087156304408
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
+
+PODFILE CHECKSUM: 12019b81fa09eb0705555fd6d6631545b799c818
+
+COCOAPODS: 1.9.0
