@@ -11,6 +11,7 @@ target 'FunRecipePrototype' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxOptional'
+  pod 'RxDataSources'
 
   # API
   pod 'Alamofire'
