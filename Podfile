@@ -18,4 +18,7 @@ target 'FunRecipePrototype' do
   pod 'SwiftyBeaver'
   pod 'FunRecipeAPI', :git => 'https://github.com/ohayoukenchan/FunRecipeAPI.git'
 
+  # R
+  pod 'R.swift'
+
 end

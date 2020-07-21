@@ -21,3 +21,6 @@ UserInterfaceState.xcuserstate
 
 #CocoaPod
 Pods/*
+
+#R.swift
+*.generated.swift
