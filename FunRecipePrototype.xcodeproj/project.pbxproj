@@ -12,7 +12,7 @@
 		090E7EBC24BEB9D70007A33D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 090E7EBB24BEB9D70007A33D /* Assets.xcassets */; };
 		090E7EBF24BEB9D70007A33D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 090E7EBD24BEB9D70007A33D /* LaunchScreen.storyboard */; };
 		090E7ECC24C037060007A33D /* CookingRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E7ECB24C037060007A33D /* CookingRecordViewModel.swift */; };
-		090E7ECE24C037390007A33D /* CookingRecordViewConreoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E7ECD24C037390007A33D /* CookingRecordViewConreoller.swift */; };
+		090E7ECE24C037390007A33D /* CookingRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E7ECD24C037390007A33D /* CookingRecordViewController.swift */; };
 		092F3BE724C678150003CA0A /* CookingRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092F3BE624C678150003CA0A /* CookingRecordCell.xib */; };
 		092F3BF324C6894B0003CA0A /* CookingRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F3BF224C6894B0003CA0A /* CookingRecordCell.swift */; };
 		09A11FD724C6A02A00AD6B23 /* SearchCookingRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A11FD624C6A02A00AD6B23 /* SearchCookingRecordModel.swift */; };
@@ -113,7 +113,7 @@
 		090E7EBE24BEB9D70007A33D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		090E7EC024BEB9D70007A33D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		090E7ECB24C037060007A33D /* CookingRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordViewModel.swift; sourceTree = "<group>"; };
-		090E7ECD24C037390007A33D /* CookingRecordViewConreoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordViewConreoller.swift; sourceTree = "<group>"; };
+		090E7ECD24C037390007A33D /* CookingRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordViewController.swift; sourceTree = "<group>"; };
 		092F3BE624C678150003CA0A /* CookingRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CookingRecordCell.xib; sourceTree = "<group>"; };
 		092F3BF224C6894B0003CA0A /* CookingRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordCell.swift; sourceTree = "<group>"; };
 		09A11FD624C6A02A00AD6B23 /* SearchCookingRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCookingRecordModel.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 				090E7ECB24C037060007A33D /* CookingRecordViewModel.swift */,
 				09A11FE024C7C78100AD6B23 /* CookingRecordViewController.xib */,
 				09A11FD624C6A02A00AD6B23 /* SearchCookingRecordModel.swift */,
-				090E7ECD24C037390007A33D /* CookingRecordViewConreoller.swift */,
+				090E7ECD24C037390007A33D /* CookingRecordViewController.swift */,
 				092F3BF224C6894B0003CA0A /* CookingRecordCell.swift */,
 				092F3BE624C678150003CA0A /* CookingRecordCell.xib */,
 			);
@@ -455,7 +455,7 @@
 				09E591CD24C5D86700EB8CAD /* UIImage.swift in Sources */,
 				092F3BF324C6894B0003CA0A /* CookingRecordCell.swift in Sources */,
 				090E7ECC24C037060007A33D /* CookingRecordViewModel.swift in Sources */,
-				090E7ECE24C037390007A33D /* CookingRecordViewConreoller.swift in Sources */,
+				090E7ECE24C037390007A33D /* CookingRecordViewController.swift in Sources */,
 				090E7EB524BEB9D70007A33D /* SceneDelegate.swift in Sources */,
 				09A11FD724C6A02A00AD6B23 /* SearchCookingRecordModel.swift in Sources */,
 				09A1200524CCEADB00AD6B23 /* PrototypeViewSizing.swift in Sources */,
