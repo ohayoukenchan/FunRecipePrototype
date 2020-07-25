@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CookingRecordViewController" customModule="FunRecipePrototype" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="C0s-cW-hPa" id="C45-LT-mA9"/>
+                <outlet property="view" destination="Eec-sr-e30" id="AFc-le-Yag"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Eec-sr-e30">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="742"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ic6-Qr-7XM">
+                    <rect key="frame" x="0.0" y="44" width="376" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="R1n-aG-Kjw"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-gT-XjY" userLabel="Horizontal Collection View">
+                    <rect key="frame" x="0.0" y="98" width="376" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="zVp-U0-klK"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AdL-HT-fc7">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="C0s-cW-hPa" userLabel="Vertival Collection View">
+                    <rect key="frame" x="0.0" y="158" width="376" height="584"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="8" minimumInteritemSpacing="8" id="dx2-c9-P00">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="ic6-Qr-7XM" firstAttribute="trailing" secondItem="UzM-fF-6hP" secondAttribute="trailing" id="5I9-iL-lJI"/>
+                <constraint firstItem="ic6-Qr-7XM" firstAttribute="top" secondItem="UzM-fF-6hP" secondAttribute="top" id="Bca-fz-oOf"/>
+                <constraint firstItem="3fW-gT-XjY" firstAttribute="trailing" secondItem="UzM-fF-6hP" secondAttribute="trailing" id="EO9-Z8-ZWA"/>
+                <constraint firstItem="C0s-cW-hPa" firstAttribute="bottom" secondItem="UzM-fF-6hP" secondAttribute="bottom" id="Thp-i3-Exb"/>
+                <constraint firstItem="C0s-cW-hPa" firstAttribute="top" secondItem="3fW-gT-XjY" secondAttribute="bottom" id="ZNP-xK-7ez"/>
+                <constraint firstItem="ic6-Qr-7XM" firstAttribute="leading" secondItem="UzM-fF-6hP" secondAttribute="leading" id="bQq-py-e4c"/>
+                <constraint firstItem="3fW-gT-XjY" firstAttribute="leading" secondItem="UzM-fF-6hP" secondAttribute="leading" id="eWd-Z4-9aJ"/>
+                <constraint firstItem="C0s-cW-hPa" firstAttribute="leading" secondItem="UzM-fF-6hP" secondAttribute="leading" id="fzU-uk-l08"/>
+                <constraint firstItem="3fW-gT-XjY" firstAttribute="top" secondItem="ic6-Qr-7XM" secondAttribute="bottom" id="mQY-ok-kdK"/>
+                <constraint firstItem="C0s-cW-hPa" firstAttribute="trailing" secondItem="UzM-fF-6hP" secondAttribute="trailing" id="qZN-oH-Xk7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="UzM-fF-6hP"/>
+            <point key="canvasLocation" x="47.826086956521742" y="49.553571428571423"/>
+        </view>
+    </objects>
+</document>
