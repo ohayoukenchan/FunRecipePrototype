@@ -23,16 +23,30 @@ enum CookingRecordItem {
 class CookingRecordViewModel {
     let items = BehaviorRelay<[CookingRecordSectionModel]>(value: [])
     let fetcher: SearchCookingRecordModel
+    var keyword: String = ""
 
-    init(searchModel: SearchCookingRecordModel) {
+    private var disposeBag = DisposeBag()
+
+    init(searchModel: SearchCookingRecordModel, searchBar: Driver<String>) {
         fetcher = searchModel
-        setupItems()
+        searchBar.drive(onNext: { [unowned self] text in
+            print("text: \(text)")
+            self.keyword = text
+            self.setupItems(self.keyword)
+        }).disposed(by: disposeBag)
+        self.setupItems()
     }
 
-    func setupItems() {
-        fetcher.fetchRecord(query: "aaa").subscribe(onNext: { result in
-            self.updateItems(cookingRecords: result)
-        })
+    func setupItems(_ query: String = "") {
+        var records: [CookingRecord] = []
+        fetcher.fetchRecord(query: query).subscribe(onNext: { result in
+            if query.isEmpty {
+                records = result
+            } else {
+                records = result.filter { ($0.comment?.contains(query) ?? false) }
+            }
+            self.updateItems(cookingRecords: records)
+        }).disposed(by: disposeBag)
     }
 
     func updateItems(cookingRecords: [CookingRecord]) {

@@ -15,12 +15,12 @@ import FunRecipeAPI
 class CookingRecordViewController: UIViewController, UISearchBarDelegate {
 
     private var tableView: UITableView!
-    private var searchBar: UISearchBar!
 
     var computedCellSize: CGSize?
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
 
     private lazy var dataSource = RxCollectionViewSectionedReloadDataSource<CookingRecordSectionModel>(configureCell: configureCell)
 
@@ -63,28 +63,26 @@ extension CookingRecordViewController {
         collectionView.rx.itemSelected
             .map { [weak self] indexPath -> CookingRecordItem? in
                 return self?.dataSource[indexPath]
+        }
+        .subscribe(onNext: { item in
+            guard let item = item else { return }
+            switch item {
+            case .record(let record):
+                print(record)
             }
-            .subscribe(onNext: { [weak self] item in
-                guard let item = item else { return }
-                switch item {
-                case .record(let record):
-                    print(record)
-                }
-            })
-            .disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func setupViewModel() {
         let fetcher = SearchCookingRecordModel()
-        viewModel = CookingRecordViewModel(searchModel: fetcher)
+        viewModel = CookingRecordViewModel(
+            searchModel: fetcher,
+            searchBar: searchBar.rx.text.orEmpty.asDriver()
+        )
         viewModel.items
             .asDriver()
             .drive(collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        fetcher.fetchRecord(query: "aaa").subscribe(onNext: { result in
-            self.viewModel.updateItems(cookingRecords: result)
-        })
-
     }
 
     private func cookingRecordCell(indexPath: IndexPath, record: CookingRecord) -> UICollectionViewCell {
@@ -101,12 +99,14 @@ extension CookingRecordViewController {
         let tabLabelHeight:CGFloat = categoryCollectionView.frame.height
         var originX:CGFloat = 0
         for title in titles {
-            let label = UILabel()
-            label.textAlignment = .center
-            label.frame = CGRect(x:originX, y:0, width:tabLabelWidth, height:tabLabelHeight)
-            label.text = title
+            let button = UIButton()
+            button.setTitle(title, for: .normal) // ボタンのタイトル
+            button.setTitleColor(UIColor.black, for: .normal) // タイトルの色
+            //button.textAlignment = .center
+            button.frame = CGRect(x:originX, y:0, width:tabLabelWidth, height:tabLabelHeight)
+            button.titleLabel?.text = title
 
-            categoryCollectionView.addSubview(label)
+            categoryCollectionView.addSubview(button)
 
             originX += tabLabelWidth
         }
@@ -124,8 +124,8 @@ extension CookingRecordViewController: UICollectionViewDelegate, UICollectionVie
             guard
                 let prototypeCell = R.nib.cookingRecordCell.instantiate(withOwner: nil, options: nil).first as? CookingRecordCell,
                 let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout
-            else {
-                fatalError()
+                else {
+                    fatalError()
             }
 
             let cellSize = prototypeCell.propotionalScaledSize(for: flowLayout, numberOfColumns: 3)
