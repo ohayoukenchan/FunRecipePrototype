@@ -7,28 +7,22 @@
 //
 
 import Foundation
+import UIKit
 
-enum palettes: Int64 {
+enum Palettes: Int64 {
 
-    case blueColor
-    case yellowColor
+    case grayColor
+    case darkGrayColor
     case blackColor
     case pinkColor
     case textWhiteColor
     case textGrayColor
     case textDarkGrayColor
-    case pinGoldColor
-    case pinBlueColor
-    case pinPurpleColor
-    case pinGoldedColor
-    case pinBluedColor
-    case pinPurpledColor
+    case blueColor
+    case yellowColor
+
     func getColor() -> UIColor {
         switch self {
-        case .primaryColor:return UIColor(hex: "#ef2855")
-        case .secondaryColor:return UIColor(hex: "#ff7898")
-        case .secondaryPinStartColor:return UIColor(hex: "#af0028")
-        case .whiteColor:return UIColor(hex: "#ffffff")
         case .grayColor:return UIColor(hex: "#f0f0f0")
         case .darkGrayColor:return UIColor(hex: "#cccccc")
         case .blueColor:return UIColor(hex: "#23abde")
@@ -38,12 +32,6 @@ enum palettes: Int64 {
         case .textWhiteColor:return UIColor(hex: "#ffffff")
         case .textGrayColor:return UIColor(hex: "#666666")
         case .textDarkGrayColor:return UIColor(hex: "#999999")
-        case .pinGoldColor:return UIColor(hex: "#CDA92A")
-        case .pinBlueColor:return UIColor(hex: "#00ABDB")
-        case .pinPurpleColor:return UIColor(hex: "#b38ef1")
-        case .pinGoldedColor:return UIColor(hex: "#A28A2C")
-        case .pinBluedColor:return UIColor(hex: "#347EA9")
-        case .pinPurpledColor:return UIColor(hex: "#735c9c")
         }
     }
 }
