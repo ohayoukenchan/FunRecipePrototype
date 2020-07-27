@@ -13,6 +13,9 @@ target 'FunRecipePrototype' do
   pod 'RxOptional'
   pod 'RxDataSources'
 
+  # Image
+  pod 'Kingfisher'
+
   # API
   pod 'Alamofire'
   pod 'SwiftyBeaver'

@@ -18,7 +18,7 @@ final class SearchCookingRecordModel: SeacrchCookingRecordProtocol {
     func fetchRecord(query: String) -> Observable<[CookingRecord]> {
         return Observable.create { [weak self] observer in
 
-            FunRecipeAPI.DefaultAPI.cookingRecordsGet().subscribe(onNext: { result in
+            FunRecipeAPI.DefaultAPI.cookingRecordsGet(offset: nil, limit: 50).subscribe(onNext: { result in
                 observer.onNext(result.cookingRecords ?? [])
                 observer.onCompleted()
             })

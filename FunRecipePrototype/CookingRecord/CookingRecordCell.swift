@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class PropotionalSizingCell: UICollectionViewCell, PrototypeViewSizing {
 
@@ -18,11 +19,23 @@ class CookingRecordCell: UICollectionViewCell, PrototypeViewSizing {
 
     @IBOutlet weak var commentLabel: UILabel!
 
+
+
     static let cellMargin: CGFloat = 8.0
 
     func update(comment: String, imageUrl: String) {
-        print(comment)
         commentLabel.text = comment
-        imageView.image = UIImage(url: imageUrl)
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(with: URL(string: imageUrl),
+                              // キャッシュがある場合はキャッシュを使用する
+                              completionHandler: {
+                                (image, error, cacheType, imageURL) in
+                                self.imageView.image = image
+        })
+
+
+        // 角を丸くする
+        imageView.layer.cornerRadius = 4
+        imageView.clipsToBounds = true
     }
 }

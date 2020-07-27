@@ -20,6 +20,7 @@ class CookingRecordViewController: UIViewController, UISearchBarDelegate {
     var computedCellSize: CGSize?
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
 
     private lazy var dataSource = RxCollectionViewSectionedReloadDataSource<CookingRecordSectionModel>(configureCell: configureCell)
 
@@ -37,9 +38,9 @@ class CookingRecordViewController: UIViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewController()
-        setupCollectionView()
         setupViewModel()
+        setupCategoryLabel()
+        setupCollectionView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -54,10 +55,6 @@ class CookingRecordViewController: UIViewController, UISearchBarDelegate {
 }
 
 extension CookingRecordViewController {
-
-    private func setupViewController() {
-        self.title = "私の料理記録"
-    }
 
     private func setupCollectionView() {
         collectionView.contentInset.top = CookingRecordCell.cellMargin
@@ -96,6 +93,25 @@ extension CookingRecordViewController {
             return cell
         }
         return UICollectionViewCell()
+    }
+
+    private func setupCategoryLabel() {
+        let titles = ["メイン","スープ"]
+        let tabLabelWidth:CGFloat = 100
+        let tabLabelHeight:CGFloat = categoryCollectionView.frame.height
+        var originX:CGFloat = 0
+        for title in titles {
+            let label = UILabel()
+            label.textAlignment = .center
+            label.frame = CGRect(x:originX, y:0, width:tabLabelWidth, height:tabLabelHeight)
+            label.text = title
+
+            categoryCollectionView.addSubview(label)
+
+            originX += tabLabelWidth
+        }
+
+        categoryCollectionView.contentSize = CGSize(width:originX, height:tabLabelHeight)
     }
 }
 

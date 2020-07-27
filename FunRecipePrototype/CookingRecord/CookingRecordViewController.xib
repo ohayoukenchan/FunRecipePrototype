@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CookingRecordViewController" customModule="FunRecipePrototype" customModuleProvider="target">
             <connections>
+                <outlet property="categoryCollectionView" destination="3fW-gT-XjY" id="T0A-62-hke"/>
                 <outlet property="collectionView" destination="C0s-cW-hPa" id="C45-LT-mA9"/>
                 <outlet property="view" destination="Eec-sr-e30" id="AFc-le-Yag"/>
             </connections>

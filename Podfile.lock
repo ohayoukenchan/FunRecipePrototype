@@ -4,6 +4,9 @@ PODS:
   - FunRecipeAPI (0.0.1):
     - Alamofire (~> 4.9.1)
     - RxSwift (~> 5.0.0)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
   - R.swift.Library (5.2.0)
@@ -25,6 +28,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - FunRecipeAPI (from `https://github.com/ohayoukenchan/FunRecipeAPI.git`)
+  - Kingfisher
   - R.swift
   - RxCocoa
   - RxDataSources
@@ -36,6 +40,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Differentiator
+    - Kingfisher
     - R.swift
     - R.swift.Library
     - RxCocoa
@@ -58,6 +63,7 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   FunRecipeAPI: 52707670c11d1d97005c3500bc65087156304408
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -67,6 +73,6 @@ SPEC CHECKSUMS:
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
 
-PODFILE CHECKSUM: 9eb903258fa373126a1c6805cc2ab8329caf72d2
+PODFILE CHECKSUM: 8127f24b3464934f2b2cc2f626156ca891801922
 
 COCOAPODS: 1.9.0
