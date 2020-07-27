@@ -26,13 +26,18 @@ class CookingRecordCell: UICollectionViewCell, PrototypeViewSizing {
     func update(comment: String, imageUrl: String) {
         commentLabel.text = comment
         imageView.kf.indicatorType = .activity
-        imageView.kf.setImage(with: URL(string: imageUrl),
-                              // キャッシュがある場合はキャッシュを使用する
-                              completionHandler: {
-                                (image, error, cacheType, imageURL) in
-                                self.imageView.image = image
-        })
+        let processor = DownsamplingImageProcessor(size: imageView.bounds.size)
+            |> RoundCornerImageProcessor(cornerRadius: 4)
 
+        imageView.kf.setImage(
+            with: URL(string: imageUrl),
+            placeholder: UIImage(resource: R.image.noimage),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
 
         // 角を丸くする
         imageView.layer.cornerRadius = 4
