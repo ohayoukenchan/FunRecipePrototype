@@ -15,6 +15,9 @@
 		090E7ECE24C037390007A33D /* CookingRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E7ECD24C037390007A33D /* CookingRecordViewController.swift */; };
 		092F3BE724C678150003CA0A /* CookingRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092F3BE624C678150003CA0A /* CookingRecordCell.xib */; };
 		092F3BF324C6894B0003CA0A /* CookingRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F3BF224C6894B0003CA0A /* CookingRecordCell.swift */; };
+		098E222124CE91990088C905 /* RecipeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E222024CE91990088C905 /* RecipeType.swift */; };
+		098E222324CE92EE0088C905 /* Palettes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E222224CE92EE0088C905 /* Palettes.swift */; };
+		098E222524CE94460088C905 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E222424CE94460088C905 /* UIColor.swift */; };
 		09A11FD724C6A02A00AD6B23 /* SearchCookingRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A11FD624C6A02A00AD6B23 /* SearchCookingRecordModel.swift */; };
 		09A11FDB24C6E48900AD6B23 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A11FDA24C6E48900AD6B23 /* R.generated.swift */; };
 		09A11FE124C7C78100AD6B23 /* CookingRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A11FE024C7C78100AD6B23 /* CookingRecordViewController.xib */; };
@@ -24,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		098E221E24CE91770088C905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09E591AB24C5D85C00EB8CAD /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C3F44C782D64D7EB20B61CE3844EBFAD;
+			remoteInfo = Kingfisher;
+		};
 		09A11FD224C69DE200AD6B23 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 09E591AB24C5D85C00EB8CAD /* Pods.xcodeproj */;
@@ -116,6 +126,9 @@
 		090E7ECD24C037390007A33D /* CookingRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordViewController.swift; sourceTree = "<group>"; };
 		092F3BE624C678150003CA0A /* CookingRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CookingRecordCell.xib; sourceTree = "<group>"; };
 		092F3BF224C6894B0003CA0A /* CookingRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordCell.swift; sourceTree = "<group>"; };
+		098E222024CE91990088C905 /* RecipeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeType.swift; sourceTree = "<group>"; };
+		098E222224CE92EE0088C905 /* Palettes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palettes.swift; sourceTree = "<group>"; };
+		098E222424CE94460088C905 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		09A11FD624C6A02A00AD6B23 /* SearchCookingRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCookingRecordModel.swift; sourceTree = "<group>"; };
 		09A11FDA24C6E48900AD6B23 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		09A11FE024C7C78100AD6B23 /* CookingRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CookingRecordViewController.xib; sourceTree = "<group>"; };
@@ -160,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				090E7EB224BEB9D70007A33D /* AppDelegate.swift */,
+				098E221024CE91770088C905 /* Globals */,
 				09E591AA24C5D85600EB8CAD /* Extenstion */,
 				090E7EC624C030440007A33D /* CookingRecord */,
 				090E7EB424BEB9D70007A33D /* SceneDelegate.swift */,
@@ -185,10 +199,20 @@
 			path = CookingRecord;
 			sourceTree = "<group>";
 		};
+		098E221024CE91770088C905 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				098E222024CE91990088C905 /* RecipeType.swift */,
+				098E222224CE92EE0088C905 /* Palettes.swift */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
 		09E591AA24C5D85600EB8CAD /* Extenstion */ = {
 			isa = PBXGroup;
 			children = (
 				09E591CC24C5D86700EB8CAD /* UIImage.swift */,
+				098E222424CE94460088C905 /* UIColor.swift */,
 			);
 			path = Extenstion;
 			sourceTree = "<group>";
@@ -199,6 +223,7 @@
 				09E591B924C5D85D00EB8CAD /* Alamofire.framework */,
 				09E591BB24C5D85D00EB8CAD /* Differentiator.framework */,
 				09E591BD24C5D85D00EB8CAD /* FunRecipeAPI.framework */,
+				098E221F24CE91770088C905 /* Kingfisher.framework */,
 				09E591BF24C5D85D00EB8CAD /* Pods_FunRecipePrototype.framework */,
 				09A11FD324C69DE200AD6B23 /* Rswift.framework */,
 				09E591C124C5D85D00EB8CAD /* RxCocoa.framework */,
@@ -291,6 +316,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		098E221F24CE91770088C905 /* Kingfisher.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Kingfisher.framework;
+			remoteRef = 098E221E24CE91770088C905 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		09A11FD324C69DE200AD6B23 /* Rswift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -451,12 +483,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				090E7EB324BEB9D70007A33D /* AppDelegate.swift in Sources */,
+				098E222524CE94460088C905 /* UIColor.swift in Sources */,
 				09A11FDB24C6E48900AD6B23 /* R.generated.swift in Sources */,
 				09E591CD24C5D86700EB8CAD /* UIImage.swift in Sources */,
 				092F3BF324C6894B0003CA0A /* CookingRecordCell.swift in Sources */,
 				090E7ECC24C037060007A33D /* CookingRecordViewModel.swift in Sources */,
 				090E7ECE24C037390007A33D /* CookingRecordViewController.swift in Sources */,
+				098E222324CE92EE0088C905 /* Palettes.swift in Sources */,
 				090E7EB524BEB9D70007A33D /* SceneDelegate.swift in Sources */,
+				098E222124CE91990088C905 /* RecipeType.swift in Sources */,
 				09A11FD724C6A02A00AD6B23 /* SearchCookingRecordModel.swift in Sources */,
 				09A1200524CCEADB00AD6B23 /* PrototypeViewSizing.swift in Sources */,
 			);
