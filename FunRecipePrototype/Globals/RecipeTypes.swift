@@ -1,5 +1,5 @@
 //
-//  RecipeType.swift
+//  RecipeTypes.swift
 //  FunRecipePrototype
 //
 //  Created by  ohayoukenchan on 2020/07/27.
@@ -10,13 +10,13 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-enum RecipeType {
+enum RecipeTypes {
     case main_dish
     case side_dish
     case soup
 }
 
-extension RecipeType: CustomStringConvertible {
+extension RecipeTypes: CustomStringConvertible {
     var description: String {
         switch self {
         case .main_dish:
@@ -29,7 +29,7 @@ extension RecipeType: CustomStringConvertible {
     }
 }
 
-extension RecipeType {
+extension RecipeTypes {
     var textColor: UIColor {
         switch self {
         case .main_dish:
@@ -43,7 +43,7 @@ extension RecipeType {
 }
 
 extension Reactive where Base: UILabel {
-    var button: Binder<RecipeType> {
+    var button: Binder<RecipeTypes> {
         return Binder(base) { label, result in
             label.textColor = result.textColor
             label.text = result.description
