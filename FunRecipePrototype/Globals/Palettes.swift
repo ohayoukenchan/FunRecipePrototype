@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum Palettes: Int64 {
-
+    
     case grayColor
     case darkGrayColor
     case blackColor
@@ -20,7 +20,7 @@ enum Palettes: Int64 {
     case textDarkGrayColor
     case blueColor
     case yellowColor
-
+    
     func getColor() -> UIColor {
         switch self {
         case .grayColor:return UIColor(hex: "#f0f0f0")
