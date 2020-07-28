@@ -20,31 +20,96 @@ enum CookingRecordItem {
     case record(record: CookingRecord)
 }
 
-class CookingRecordViewModel {
+protocol CookingRecordViewModelInputs: AnyObject {
+    var isMainButtonTapped: PublishRelay<Bool> { get }
+    var isSideDishButtonTapped: PublishRelay<Bool> { get }
+    var isSoupButtonTapped: PublishRelay<Bool> { get }
+    var searchText: AnyObserver<String?> { get }
+    var selectedType: PublishRelay<RecipeTypes> { get }
+}
+
+protocol CookingRecordViewModelOutputs: AnyObject {
+    var isMainButtonActive: Driver<Bool> { get }
+    var isSideDishButtonActive: Driver<Bool> { get }
+    var isSoupButtonActive: Driver<Bool> { get }
+    var items: BehaviorRelay<[CookingRecordSectionModel]> { get }
+}
+
+protocol CookingRecordViewModelType: AnyObject {
+    var inputs: CookingRecordViewModelInputs { get }
+    var outputs: CookingRecordViewModelOutputs { get }
+}
+
+class CookingRecordViewModel: CookingRecordViewModelType, CookingRecordViewModelInputs, CookingRecordViewModelOutputs {
+
+    var searchText: AnyObserver<String?>
+
+    var inputs: CookingRecordViewModelInputs { return self }
+    var outputs: CookingRecordViewModelOutputs { return self }
+
+    // MARK: - Input
+    let isMainButtonTapped = PublishRelay<Bool>()
+    let isSideDishButtonTapped = PublishRelay<Bool>()
+    let isSoupButtonTapped = PublishRelay<Bool>()
+    let selectedType = PublishRelay<RecipeTypes>()
+
+    // MARK: - Output
     let items = BehaviorRelay<[CookingRecordSectionModel]>(value: [])
-    let fetcher: SearchCookingRecordModel
-    var keyword: String = ""
+    let isMainButtonActive: Driver<Bool>
+    let isSideDishButtonActive: Driver<Bool>
+    let isSoupButtonActive: Driver<Bool>
+
+    let fetcher = SearchCookingRecordModel()
 
     private var disposeBag = DisposeBag()
 
-    init(searchModel: SearchCookingRecordModel, searchBar: Driver<String>) {
-        fetcher = searchModel
-        searchBar.drive(onNext: { [unowned self] text in
-            print("text: \(text)")
-            self.keyword = text
-            self.setupItems(self.keyword)
-        }).disposed(by: disposeBag)
-        self.setupItems()
+    init() {
+
+        isMainButtonActive = isMainButtonTapped.asDriver(onErrorDriveWith: .empty())
+        isSideDishButtonActive = isSideDishButtonTapped.asDriver(onErrorDriveWith: .empty())
+        isSoupButtonActive = isSoupButtonTapped.asDriver(onErrorDriveWith: .empty())
+
+        _ = isMainButtonActive.asDriver().drive()
+        _ = isSideDishButtonActive.asDriver().drive()
+        _ = isSoupButtonActive.asDriver().drive()
+
+        let _searchText = PublishRelay<String?>()
+        self.searchText = AnyObserver<String?>() { event in
+            guard let text = event.element else {
+                return
+            }
+            _searchText.accept(text)
+        }
+
+        Observable.combineLatest(
+                selectedType.asObservable(),
+                _searchText
+            )
+            .subscribe(onNext: {
+                let type = $0.0.value
+                var query = ""
+                if let q = $0.1 {
+                    query = q
+                }
+                self.fetchItems(query: query, type: type)
+            }).disposed(by: disposeBag)
+
+        self.fetchItems()
     }
 
-    func setupItems(_ query: String = "") {
+    func fetchItems(query: String = "", type: String = "") {
         var records: [CookingRecord] = []
         fetcher.fetchRecord(query: query).subscribe(onNext: { result in
-            if query.isEmpty {
-                records = result
-            } else {
-                records = result.filter { ($0.comment?.contains(query) ?? false) }
+            records = result
+
+            if !type.isEmpty {
+                records = records.filter { ($0.recipeType?.contains(type) ?? false) }
             }
+            if !query.isEmpty {
+                records = records.filter { ($0.comment?.contains(query) ?? false) }
+            }
+            print(query)
+
             self.updateItems(cookingRecords: records)
         }).disposed(by: disposeBag)
     }
