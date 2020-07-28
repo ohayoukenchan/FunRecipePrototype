@@ -4,7 +4,7 @@
 FunRecipeProtoType
 
 # DEMO
-![]('./assets/demo.MP4')
+![demo (1)](https://user-images.githubusercontent.com/10736733/88683679-07a2cf80-d12f-11ea-95cb-6f208339c2c8.gif)
 
 # Features
 
