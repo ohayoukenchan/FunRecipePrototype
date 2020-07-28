@@ -32,7 +32,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="n5r-jn-Jd0" secondAttribute="trailing" constant="8" id="5UL-jl-6ec"/>
-                    <constraint firstAttribute="bottom" secondItem="n5r-jn-Jd0" secondAttribute="bottom" id="MLK-pz-obY"/>
+                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="n5r-jn-Jd0" secondAttribute="bottom" id="MLK-pz-obY"/>
                     <constraint firstItem="N9l-a4-cTz" firstAttribute="top" secondItem="VUK-8w-Oqk" secondAttribute="top" id="RIY-qc-KDP"/>
                     <constraint firstItem="N9l-a4-cTz" firstAttribute="leading" secondItem="VUK-8w-Oqk" secondAttribute="leading" id="Srp-0F-Rmz"/>
                     <constraint firstAttribute="trailing" secondItem="N9l-a4-cTz" secondAttribute="trailing" id="WHL-O3-tXk"/>

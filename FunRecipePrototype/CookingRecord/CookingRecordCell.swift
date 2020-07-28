@@ -16,10 +16,7 @@ class PropotionalSizingCell: UICollectionViewCell, PrototypeViewSizing {
 
 class CookingRecordCell: UICollectionViewCell, PrototypeViewSizing {
     @IBOutlet weak var imageView: UIImageView!
-
     @IBOutlet weak var commentLabel: UILabel!
-
-
 
     static let cellMargin: CGFloat = 8.0
 
@@ -37,9 +34,8 @@ class CookingRecordCell: UICollectionViewCell, PrototypeViewSizing {
                 .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(1)),
                 .cacheOriginalImage
-            ])
+        ])
 
-        // 角を丸くする
         imageView.layer.cornerRadius = 4
         imageView.clipsToBounds = true
     }
