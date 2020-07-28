@@ -15,7 +15,7 @@
 		090E7ECE24C037390007A33D /* CookingRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E7ECD24C037390007A33D /* CookingRecordViewController.swift */; };
 		092F3BE724C678150003CA0A /* CookingRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092F3BE624C678150003CA0A /* CookingRecordCell.xib */; };
 		092F3BF324C6894B0003CA0A /* CookingRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F3BF224C6894B0003CA0A /* CookingRecordCell.swift */; };
-		098E222124CE91990088C905 /* RecipeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E222024CE91990088C905 /* RecipeType.swift */; };
+		098E222124CE91990088C905 /* RecipeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E222024CE91990088C905 /* RecipeTypes.swift */; };
 		098E222324CE92EE0088C905 /* Palettes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E222224CE92EE0088C905 /* Palettes.swift */; };
 		098E222524CE94460088C905 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E222424CE94460088C905 /* UIColor.swift */; };
 		09A11FD724C6A02A00AD6B23 /* SearchCookingRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A11FD624C6A02A00AD6B23 /* SearchCookingRecordModel.swift */; };
@@ -126,7 +126,7 @@
 		090E7ECD24C037390007A33D /* CookingRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordViewController.swift; sourceTree = "<group>"; };
 		092F3BE624C678150003CA0A /* CookingRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CookingRecordCell.xib; sourceTree = "<group>"; };
 		092F3BF224C6894B0003CA0A /* CookingRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordCell.swift; sourceTree = "<group>"; };
-		098E222024CE91990088C905 /* RecipeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeType.swift; sourceTree = "<group>"; };
+		098E222024CE91990088C905 /* RecipeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTypes.swift; sourceTree = "<group>"; };
 		098E222224CE92EE0088C905 /* Palettes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palettes.swift; sourceTree = "<group>"; };
 		098E222424CE94460088C905 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		09A11FD624C6A02A00AD6B23 /* SearchCookingRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCookingRecordModel.swift; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 		098E221024CE91770088C905 /* Globals */ = {
 			isa = PBXGroup;
 			children = (
-				098E222024CE91990088C905 /* RecipeType.swift */,
+				098E222024CE91990088C905 /* RecipeTypes.swift */,
 				098E222224CE92EE0088C905 /* Palettes.swift */,
 			);
 			path = Globals;
@@ -491,7 +491,7 @@
 				090E7ECE24C037390007A33D /* CookingRecordViewController.swift in Sources */,
 				098E222324CE92EE0088C905 /* Palettes.swift in Sources */,
 				090E7EB524BEB9D70007A33D /* SceneDelegate.swift in Sources */,
-				098E222124CE91990088C905 /* RecipeType.swift in Sources */,
+				098E222124CE91990088C905 /* RecipeTypes.swift in Sources */,
 				09A11FD724C6A02A00AD6B23 /* SearchCookingRecordModel.swift in Sources */,
 				09A1200524CCEADB00AD6B23 /* PrototypeViewSizing.swift in Sources */,
 			);
