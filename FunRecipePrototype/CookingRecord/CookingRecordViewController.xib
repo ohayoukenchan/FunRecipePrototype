@@ -28,10 +28,10 @@
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-gT-XjY" userLabel="Horizontal Collection View">
-                    <rect key="frame" x="0.0" y="98" width="376" height="60"/>
+                    <rect key="frame" x="0.0" y="98" width="376" height="44"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="zVp-U0-klK"/>
+                        <constraint firstAttribute="height" constant="44" id="zVp-U0-klK"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AdL-HT-fc7">
                         <size key="itemSize" width="128" height="128"/>
@@ -41,7 +41,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="C0s-cW-hPa" userLabel="Vertival Collection View">
-                    <rect key="frame" x="0.0" y="158" width="376" height="584"/>
+                    <rect key="frame" x="0.0" y="142" width="376" height="600"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="8" minimumInteritemSpacing="8" id="dx2-c9-P00">
                         <size key="itemSize" width="50" height="50"/>
