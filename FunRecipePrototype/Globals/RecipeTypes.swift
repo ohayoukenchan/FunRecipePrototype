@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-enum RecipeTypes {
+enum RecipeTypes: CaseIterable {
     case main_dish
     case side_dish
     case soup
@@ -30,14 +30,27 @@ extension RecipeTypes: CustomStringConvertible {
 }
 
 extension RecipeTypes {
-    var textColor: UIColor {
+    var value: String {
+        switch self {
+        case .main_dish:
+            return "main_dish"
+        case .side_dish:
+            return "side_dish"
+        case .soup:
+            return "soup"
+        }
+    }
+}
+
+extension RecipeTypes {
+    var color: UIColor {
         switch self {
         case .main_dish:
             return Palettes.blueColor.getColor()
         case .side_dish:
-            return Palettes.grayColor.getColor()
+            return Palettes.pinkColor.getColor()
         case .soup:
-            return Palettes.grayColor.getColor()
+            return Palettes.yellowColor.getColor()
         }
     }
 }
@@ -45,7 +58,7 @@ extension RecipeTypes {
 extension Reactive where Base: UILabel {
     var button: Binder<RecipeTypes> {
         return Binder(base) { label, result in
-            label.textColor = result.textColor
+            label.textColor = result.color
             label.text = result.description
         }
     }
